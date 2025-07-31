@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core System Colors */
+    --color-background: #f7fafc; /* gray-50 */
+    --color-foreground: #1a202c; /* gray-900 */
+    --color-border: #e2e8f0; /* gray-200 */
+    --color-input: #ffffff; /* white */
+    --color-ring: #00d4ff; /* cyan-400 */
+    
+    /* Card & Surface Colors */
+    --color-card: #ffffff; /* white */
+    --color-card-foreground: #1a202c; /* gray-900 */
+    --color-popover: #ffffff; /* white */
+    --color-popover-foreground: #1a202c; /* gray-900 */
+    --color-surface: #edf2f7; /* gray-100 */
+    
+    /* Muted Colors */
+    --color-muted: #f7fafc; /* gray-50 */
+    --color-muted-foreground: #4a5568; /* gray-600 */
+    
+    /* Brand Primary Colors */
+    --color-primary: #1a1d29; /* slate-900 */
+    --color-primary-foreground: #ffffff; /* white */
+    
+    /* Brand Secondary Colors */
+    --color-secondary: #2d3748; /* gray-700 */
+    --color-secondary-foreground: #ffffff; /* white */
+    
+    /* Accent Colors */
+    --color-accent: #00d4ff; /* cyan-400 */
+    --color-accent-foreground: #1a202c; /* gray-900 */
+    
+    /* Status Colors */
+    --color-success: #10b981; /* emerald-500 */
+    --color-success-foreground: #ffffff; /* white */
+    
+    --color-warning: #f59e0b; /* amber-500 */
+    --color-warning-foreground: #1a202c; /* gray-900 */
+    
+    --color-error: #e53e3e; /* red-500 */
+    --color-error-foreground: #ffffff; /* white */
+    
+    --color-destructive: #e53e3e; /* red-500 */
+    --color-destructive-foreground: #ffffff; /* white */
+    
+    /* Technical Command Center Colors */
+    --color-command-primary: #1a1d29; /* slate-900 */
+    --color-command-secondary: #2d3748; /* gray-700 */
+    --color-electric-blue: #00d4ff; /* cyan-400 */
+    --color-warm-gold: #ffa500; /* orange-400 */
+    --color-energetic-orange: #ff6b35; /* orange-500 */
+    
+    /* Typography Colors */
+    --color-text-primary: #1a202c; /* gray-900 */
+    --color-text-secondary: #4a5568; /* gray-600 */
+    --color-text-muted: #6c757d; /* gray-500 */
+    
+    /* System Monitoring Colors */
+    --color-system-healthy: #10b981; /* emerald-500 */
+    --color-system-warning: #f59e0b; /* amber-500 */
+    --color-system-critical: #e53e3e; /* red-500 */
+    --color-system-info: #00d4ff; /* cyan-400 */
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Typography Base Styles */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  
+  body, p, span, div {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+  
+  /* Code and Technical Elements */
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 400;
+  }
+  
+  /* CTA Elements */
+  .cta-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+  }
+  
+  /* Smooth Scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--color-muted);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-accent);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary);
+  }
+}
+
+@layer components {
+  /* Command Center Gradient Backgrounds */
+  .bg-command-gradient {
+    background: linear-gradient(135deg, var(--color-command-primary) 0%, var(--color-command-secondary) 100%);
+  }
+  
+  .bg-accent-gradient {
+    background: linear-gradient(135deg, var(--color-electric-blue), var(--color-accent));
+  }
+  
+  .bg-cta-gradient {
+    background: linear-gradient(135deg, var(--color-warm-gold), var(--color-energetic-orange));
+  }
+  
+  /* Technical Shadows */
+  .shadow-command {
+    box-shadow: 0 4px 20px rgba(0, 212, 255, 0.1);
+  }
+  
+  .shadow-elevation {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  
+  .shadow-modal {
+    box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Interactive States */
+  .hover-lift {
+    transition: transform 300ms ease-out, box-shadow 300ms ease-out;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0, 212, 255, 0.3);
+  }
+  
+  /* Glass Morphism Effect */
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Terminal Styling */
+  .terminal-bg {
+    background: linear-gradient(135deg, #1a1d29 0%, #2a2d3a 100%);
+  }
+  
+  /* Pulse Animation for System Status */
+  .pulse-system {
+    animation: pulse-system 2s infinite;
+  }
+  
+  @keyframes pulse-system {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+  
+  /* Typewriter Animation */
+  .typewriter {
+    overflow: hidden;
+    border-right: 2px solid var(--color-accent);
+    white-space: nowrap;
+    animation: typewriter 2s steps(40) forwards, blink-caret 1s step-end infinite;
+  }
+  
+  @keyframes typewriter {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  @keyframes blink-caret {
+    from, to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: var(--color-accent);
+    }
+  }
+  
+  /* Skill Bar Animation */
+  .skill-bar {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .skill-bar.animate {
+    transform: scaleX(1);
+  }
+  
+  /* Count Up Animation */
+  .count-up {
+    animation: countUp 2s ease-out forwards;
+  }
+  
+  @keyframes countUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer utilities {
+  /* Responsive Typography */
+  .text-responsive-xl {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+  }
+  
+  .text-responsive-lg {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+  }
+  
+  .text-responsive-md {
+    font-size: clamp(1.125rem, 2vw, 1.5rem);
+  }
+  
+  /* Grid Utilities */
+  .grid-auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .grid-auto-fill {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  
+  /* Spacing System (8px grid) */
+  .space-grid-1 { @apply space-y-2; } /* 8px */
+  .space-grid-2 { @apply space-y-4; } /* 16px */
+  .space-grid-3 { @apply space-y-6; } /* 24px */
+  .space-grid-4 { @apply space-y-8; } /* 32px */
+  .space-grid-6 { @apply space-y-12; } /* 48px */
+  .space-grid-8 { @apply space-y-16; } /* 64px */
+  
+  /* Technical Border Radius */
+  .rounded-technical {
+    border-radius: 8px;
+  }
+  
+  /* Performance Optimized Transforms */
+  .transform-gpu {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+  
+  /* Focus States for Accessibility */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2;
+  }
+  
+  /* Command Center Status Colors */
+  .text-system-healthy { color: var(--color-system-healthy); }
+  .text-system-warning { color: var(--color-system-warning); }
+  .text-system-critical { color: var(--color-system-critical); }
+  .text-system-info { color: var(--color-system-info); }
+  
+  .bg-system-healthy { background-color: var(--color-system-healthy); }
+  .bg-system-warning { background-color: var(--color-system-warning); }
+  .bg-system-critical { background-color: var(--color-system-critical); }
+  .bg-system-info { background-color: var(--color-system-info); }
+}
