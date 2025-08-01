@@ -150,7 +150,7 @@ const HeroSection = () => {
                 <div className="absolute inset-0 bg-accent/20 rounded-full blur-xl"></div>
                 <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-accent/30 shadow-command">
                   <Image
-                    src="/src/img/IMG_20250729_172536_599.webp"
+                    src="/IMG_20250729_172536_599.webp"
                     alt="Sojib Hossain - System Engineering Expert"
                     className="w-full h-full object-cover"
                   />
